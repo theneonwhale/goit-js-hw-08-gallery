@@ -1,3 +1,8 @@
+:root {
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-duration: 250ms;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -46,7 +51,7 @@ body {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  transition: transform 200ms ease-in-out;
+  transition: transform var(--animation-duration) var(--timing-function);
 }
 
 .gallery__link {
@@ -61,6 +66,9 @@ body {
 
 /* Lightbox */
 .lightbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: fixed;
   top: 0;
   left: 0;
@@ -68,7 +76,7 @@ body {
   height: 100vh;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 200ms linear;
+  transition: opacity var(--animation-duration) var(--timing-function);
 }
 
 .lightbox.is-open {
@@ -86,33 +94,26 @@ body {
 }
 
 .lightbox__content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: scale(0.9);
-  transition: transform 200ms ease-in-out;
-}
-
-.lightbox__image {
-  width: auto;
-  height: auto;
-  max-height: 100vh;
-  max-width: 100vw;
+  transform: scale(0.95);
+  transition: transform var(--animation-duration) var(--timing-function);
 }
 
 .lightbox.is-open .lightbox__content {
   transform: scale(1);
 }
 
+.lightbox__image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-height: 100vh;
+  max-width: 100vw;
+}
+
 .lightbox__button {
   position: absolute;
   top: 8px;
-  right: 8px;
+  right: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -125,7 +126,7 @@ body {
   background-color: transparent;
   color: #fff;
   cursor: pointer;
-  transition: background-color 200ms ease-in-out;
+  transition: background-color var(--animation-duration) var(--timing-function);
   outline: none;
   background-image: url('../images/icon-close.svg');
   background-position: center;
@@ -133,7 +134,59 @@ body {
   background-repeat: no-repeat;
 }
 
+.lightbox__next {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color var(--animation-duration) var(--timing-function);
+  outline: none;
+  background-image: url('../images/next.svg');
+  background-position: center;
+  background-size: 50%;
+  background-repeat: no-repeat;
+}
+
+.lightbox__previous {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color var(--animation-duration) var(--timing-function);
+  outline: none;
+  background-image: url('../images/previous.svg');
+  background-position: center;
+  background-size: 50%;
+  background-repeat: no-repeat;
+}
+
 .lightbox__button:hover,
-.lightbox__button:focus {
+.lightbox__button:focus,
+.lightbox__next:hover,
+.lightbox__next:focus,
+.lightbox__previous:hover,
+.lightbox__previous:focus {
   background-color: rgba(0, 0, 0, 0.5);
 }
