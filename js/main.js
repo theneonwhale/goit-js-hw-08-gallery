@@ -98,24 +98,6 @@ function onArrowKeysPress(event) {
   }
 }
 
-function onNextSwitchImg() {
-  for (let i = 0; i < images.length - 1; i += 1) {
-    if (ligtboxImg.src === images[i].dataset.source) {
-      ligtboxImg.src = images[i + 1].dataset.source;
-      break;
-    }
-  }
-}
-
-function onPreviousSwitchImg() {
-  for (let i = images.length - 1; i > 0; i -= 1) {
-    if (ligtboxImg.src === images[i].dataset.source) {
-      ligtboxImg.src = images[i - 1].dataset.source;
-      break;
-    }
-  }
-}
-
 function onArrowBtnsClick(event) {
   const isNextBtn = event.target === btnNext;
   const isPreviousBtn = event.target === btnPrevious;
@@ -126,5 +108,25 @@ function onArrowBtnsClick(event) {
 
   if (isPreviousBtn) {
     onPreviousSwitchImg();
+  }
+}
+
+function onNextSwitchImg() {
+  for (let i = 0; i < images.length - 1; i += 1) {
+    if (ligtboxImg.src === images[i].dataset.source) {
+      ligtboxImg.src = images[i + 1].dataset.source;
+      ligtboxImg.alt = images[i + 1].alt;
+      break;
+    }
+  }
+}
+
+function onPreviousSwitchImg() {
+  for (let i = images.length - 1; i > 0; i -= 1) {
+    if (ligtboxImg.src === images[i].dataset.source) {
+      ligtboxImg.src = images[i - 1].dataset.source;
+      ligtboxImg.alt = images[i - 1].alt;
+      break;
+    }
   }
 }
