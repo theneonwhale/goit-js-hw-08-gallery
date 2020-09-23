@@ -55,8 +55,6 @@ function onOpenModal(event) {
   ligtboxImg.src = event.target.dataset.source;
   ligtboxImg.alt = event.target.alt;
 
-  console.log(event.target.closest('li').nextSibling);
-
   window.addEventListener('keydown', onEscKeyPress);
   window.addEventListener('keydown', onArrowKeysPress);
 }
