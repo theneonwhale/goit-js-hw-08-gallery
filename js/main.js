@@ -3,25 +3,21 @@ import pictures from './gallery-items.js';
 const gallery = document.querySelector('.js-gallery');
 const lightbox = document.querySelector('.js-lightbox');
 const ligtboxImg = document.querySelector('.lightbox__image');
-const btnClose = document.querySelector('button[data-action="close-lightbox"]');
-const btnNext = document.querySelector('button[data-action="next-lightbox"]');
-const btnPrevious = document.querySelector(
-  'button[data-action="previous-lightbox"]',
-);
+const btnClose = document.querySelector('[data-action="close-lightbox"]');
+const btnNext = document.querySelector('[data-action="next-lightbox"]');
+const btnPrevious = document.querySelector('[data-action="previous-lightbox"]');
 const overlay = document.querySelector('.lightbox__overlay');
 
 gallery.insertAdjacentHTML('beforeend', makeGalleryMarkup(pictures));
 
 gallery.addEventListener('click', onOpenModal);
-
 btnClose.addEventListener('click', onCloseModal);
-
 overlay.addEventListener('click', onOverlayClose);
-
-const images = document.querySelectorAll('img.gallery__image');
 
 btnNext.addEventListener('click', onArrowBtnsClick);
 btnPrevious.addEventListener('click', onArrowBtnsClick);
+
+const images = document.querySelectorAll('img.gallery__image');
 
 function makeGalleryMarkup(pictures) {
   return pictures
