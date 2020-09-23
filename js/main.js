@@ -42,11 +42,13 @@ function makeGalleryMarkup(pictures) {
 }
 
 function onOpenModal(event) {
-  if (event.target.nodeName === 'IMG') {
-    event.preventDefault();
+  event.preventDefault();
 
-    refs.lightbox.classList.add('is-open');
+  if (event.target.nodeName !== 'IMG') {
+    return;
   }
+
+  refs.lightbox.classList.add('is-open');
 
   refs.ligtboxImg.src = event.target.dataset.source;
   refs.ligtboxImg.alt = event.target.alt;
