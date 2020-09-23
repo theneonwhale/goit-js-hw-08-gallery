@@ -1,21 +1,23 @@
 import pictures from './gallery-items.js';
 
-const gallery = document.querySelector('.js-gallery');
-const lightbox = document.querySelector('.js-lightbox');
-const ligtboxImg = document.querySelector('.lightbox__image');
-const btnClose = document.querySelector('[data-action="close-lightbox"]');
-const btnNext = document.querySelector('[data-action="next-lightbox"]');
-const btnPrevious = document.querySelector('[data-action="previous-lightbox"]');
-const overlay = document.querySelector('.lightbox__overlay');
+const refs = {
+  gallery: document.querySelector('.js-gallery'),
+  lightbox: document.querySelector('.js-lightbox'),
+  ligtboxImg: document.querySelector('.lightbox__image'),
+  btnClose: document.querySelector('[data-action="close-lightbox"]'),
+  btnNext: document.querySelector('[data-action="next-lightbox"]'),
+  btnPrevious: document.querySelector('[data-action="previous-lightbox"]'),
+  overlay: document.querySelector('.lightbox__overlay'),
+};
 
-gallery.insertAdjacentHTML('beforeend', makeGalleryMarkup(pictures));
+refs.gallery.insertAdjacentHTML('beforeend', makeGalleryMarkup(pictures));
 
-gallery.addEventListener('click', onOpenModal);
-btnClose.addEventListener('click', onCloseModal);
-overlay.addEventListener('click', onOverlayClose);
+refs.gallery.addEventListener('click', onOpenModal);
+refs.btnClose.addEventListener('click', onCloseModal);
+refs.overlay.addEventListener('click', onOverlayClose);
 
-btnNext.addEventListener('click', onArrowBtnsClick);
-btnPrevious.addEventListener('click', onArrowBtnsClick);
+refs.btnNext.addEventListener('click', onArrowBtnsClick);
+refs.btnPrevious.addEventListener('click', onArrowBtnsClick);
 
 function makeGalleryMarkup(pictures) {
   return pictures
@@ -43,23 +45,23 @@ function onOpenModal(event) {
   if (event.target.nodeName === 'IMG') {
     event.preventDefault();
 
-    lightbox.classList.add('is-open');
+    refs.lightbox.classList.add('is-open');
   }
 
-  ligtboxImg.src = event.target.dataset.source;
-  ligtboxImg.alt = event.target.alt;
+  refs.ligtboxImg.src = event.target.dataset.source;
+  refs.ligtboxImg.alt = event.target.alt;
 
   window.addEventListener('keydown', onEscKeyPress);
   window.addEventListener('keydown', onArrowKeysPress);
 }
 
 function onCloseModal() {
-  if (ligtboxImg.src && ligtboxImg.alt) {
-    ligtboxImg.src = '';
-    ligtboxImg.alt = '';
+  if (refs.ligtboxImg.src && refs.ligtboxImg.alt) {
+    refs.ligtboxImg.src = '';
+    refs.ligtboxImg.alt = '';
   }
 
-  lightbox.classList.remove('is-open');
+  refs.lightbox.classList.remove('is-open');
 
   window.removeEventListener('keydown', onEscKeyPress);
   window.removeEventListener('keydown', onArrowKeysPress);
@@ -97,8 +99,8 @@ function onArrowKeysPress(event) {
 }
 
 function onArrowBtnsClick(event) {
-  const isNextBtn = event.target === btnNext;
-  const isPreviousBtn = event.target === btnPrevious;
+  const isNextBtn = event.target === refs.btnNext;
+  const isPreviousBtn = event.target === refs.btnPrevious;
 
   if (isNextBtn) {
     onNextSwitchImg();
@@ -111,9 +113,9 @@ function onArrowBtnsClick(event) {
 
 function onNextSwitchImg() {
   for (let i = 0; i < pictures.length - 1; i += 1) {
-    if (ligtboxImg.src === pictures[i].original) {
-      ligtboxImg.src = pictures[i + 1].original;
-      ligtboxImg.alt = pictures[i + 1].description;
+    if (refs.ligtboxImg.src === pictures[i].original) {
+      refs.ligtboxImg.src = pictures[i + 1].original;
+      refs.ligtboxImg.alt = pictures[i + 1].description;
       break;
     }
   }
@@ -121,9 +123,9 @@ function onNextSwitchImg() {
 
 function onPreviousSwitchImg() {
   for (let i = pictures.length - 1; i > 0; i -= 1) {
-    if (ligtboxImg.src === pictures[i].original) {
-      ligtboxImg.src = pictures[i - 1].original;
-      ligtboxImg.alt = pictures[i - 1].description;
+    if (refs.ligtboxImg.src === pictures[i].original) {
+      refs.ligtboxImg.src = pictures[i - 1].original;
+      refs.ligtboxImg.alt = pictures[i - 1].description;
       break;
     }
   }
