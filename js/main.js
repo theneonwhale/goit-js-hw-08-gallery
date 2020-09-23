@@ -17,8 +17,6 @@ overlay.addEventListener('click', onOverlayClose);
 btnNext.addEventListener('click', onArrowBtnsClick);
 btnPrevious.addEventListener('click', onArrowBtnsClick);
 
-const images = document.querySelectorAll('img.gallery__image');
-
 function makeGalleryMarkup(pictures) {
   return pictures
     .map(({ preview, original, description }) => {
@@ -112,20 +110,20 @@ function onArrowBtnsClick(event) {
 }
 
 function onNextSwitchImg() {
-  for (let i = 0; i < images.length - 1; i += 1) {
-    if (ligtboxImg.src === images[i].dataset.source) {
-      ligtboxImg.src = images[i + 1].dataset.source;
-      ligtboxImg.alt = images[i + 1].alt;
+  for (let i = 0; i < pictures.length - 1; i += 1) {
+    if (ligtboxImg.src === pictures[i].original) {
+      ligtboxImg.src = pictures[i + 1].original;
+      ligtboxImg.alt = pictures[i + 1].description;
       break;
     }
   }
 }
 
 function onPreviousSwitchImg() {
-  for (let i = images.length - 1; i > 0; i -= 1) {
-    if (ligtboxImg.src === images[i].dataset.source) {
-      ligtboxImg.src = images[i - 1].dataset.source;
-      ligtboxImg.alt = images[i - 1].alt;
+  for (let i = pictures.length - 1; i > 0; i -= 1) {
+    if (ligtboxImg.src === pictures[i].original) {
+      ligtboxImg.src = pictures[i - 1].original;
+      ligtboxImg.alt = pictures[i - 1].description;
       break;
     }
   }
