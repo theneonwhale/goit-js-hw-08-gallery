@@ -62,29 +62,88 @@ export default [
       'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
     description: 'Lighthouse Coast Sea',
   },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2020/09/22/08/27/jellyfish-5592320__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2020/09/22/08/27/jellyfish-5592320_1280.jpg',
+    description: 'Jellyfish',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2020/09/23/09/12/orange-flower-5595483__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2020/09/23/09/12/orange-flower-5595483_1280.jpg',
+    description: 'Orange Flower',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2020/09/11/00/11/landscape-5561678__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2020/09/11/00/11/landscape-5561678_1280.jpg',
+    description: 'Mountain Range',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2020/06/07/12/01/currants-5270094__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2020/06/07/12/01/currants-5270094_1280.jpg',
+    description: 'Currants',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2013/04/03/21/25/cereals-100263__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2013/04/03/21/25/cereals-100263_1280.jpg',
+    description: 'Cereals, Field, Ripe, Poppy, Poppy Flower, Summer, Red',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2020/09/18/08/01/brown-throated-sunbird-5581173__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2020/09/18/08/01/brown-throated-sunbird-5581173_1280.jpg',
+    description: 'Brown-Throated Sunbird, Bird, Animal',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2020/09/20/00/02/sailing-boats-5585743__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2020/09/20/00/02/sailing-boats-5585743_1280.jpg',
+    description: 'Sailing Boats, Lake, Boats, Grass, Sail, Tour, Water',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2020/04/20/09/42/seagulls-5067489__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2020/04/20/09/42/seagulls-5067489_1280.jpg',
+    description: 'Seagulls, Row, Birds, Environment, Bird',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2013/04/04/12/34/sunset-100367__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2013/04/04/12/34/sunset-100367_1280.jpg',
+    description: 'Sunset, Birds, Flying, Sky, Colorful, Colors, Orange',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2020/09/06/17/52/island-5549660__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2020/09/06/17/52/island-5549660_1280.jpg',
+    description: 'Island, Buildings, Fortress, Tower, Medieval',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2020/09/04/08/02/cityscape-5543224__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2020/09/04/08/02/cityscape-5543224_1280.jpg',
+    description: 'Cityscape, City, City Lights, Evening, Night',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2020/09/05/14/01/kingfisher-5546610__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2020/09/05/14/01/kingfisher-5546610_1280.jpg',
+    description: 'Kingfisher, Bird, Animal, Avian, Wildlife',
+  },
 ];
-
-// import pictures from './gallery-items.js';
-
-// const gallery = document.querySelector('.js-gallery');
-// const makeGallery = pictures.map(makeGalleryMarkup).join('');
-
-// gallery.insertAdjacentHTML('beforeend', makeGallery);
-
-// function makeGalleryMarkup({ original, preview, description }) {
-//   return `
-//     <li class="gallery__item">
-//   <a
-//     class="gallery__link"
-//     href="${original}"
-//   >
-//     <img
-//       class="gallery__image"
-//       src="${preview}"
-//       data-source="${original}"
-//       alt="${description}"
-//     />
-//   </a>
-// </li>
-//     `;
-// }
